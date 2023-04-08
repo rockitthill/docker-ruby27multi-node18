@@ -5,20 +5,30 @@
 BUILDER=$( basename "$PWD" )
 PLATFORMS="linux/arm64,linux/amd64"
 TAG="rockitthill/rails6"
+BULLET=$( printf "\e[38;2;43;88;103;48;2;34;38;40m▄\e[38;2;30;138;180;48;2;32;137;178m▄\e[38;2;33;35;37;48;2;32;64;78m▄\e[m" )
 
 # Assign a tag version if an argument is passed in
 if [[ $# -eq 1 ]] ; then
   TAG="$TAG:$1"
 fi
 
+printf "
+ \e[49m   \e[38;2;36;36;36;49m▄\e[48;2;36;36;36m   \e[49;38;2;36;36;36m▀\e[49m   \e[38;2;37;180;232;49m▄\e[48;2;37;180;232m \e[38;2;22;116;176;48;2;37;180;232m▄\e[48;2;36;36;36m \e[38;2;36;36;36;49m▄\e[49m   \e[m   
+ \e[49m  \e[48;2;36;36;36m   \e[49;38;2;36;36;36m▀\e[49m   \e[38;2;37;180;232;49m▄\e[48;2;37;180;232m   \e[49;38;2;22;116;176m▀\e[48;2;36;36;36m   \e[49m  \e[m   This build script written by
+ \e[38;2;36;36;36;49m▄\e[48;2;36;36;36m   \e[49m    \e[38;2;37;180;232;49m▄\e[38;2;22;116;176;49m▄▄\e[49m    \e[48;2;36;36;36m   \e[38;2;36;36;36;49m▄\e[m   
+ \e[49;38;2;36;36;36m▀\e[48;2;36;36;36m   \e[49m  \e[38;2;37;180;232;49m▄\e[48;2;37;180;232m  \e[48;2;22;116;176m \e[49;38;2;22;120;180m▀\e[49m    \e[48;2;36;36;36m   \e[49;38;2;36;36;36m▀\e[m   Rockitt Hill, LLC
+ \e[49m  \e[48;2;36;36;36m  \e[38;2;203;204;205;48;2;207;207;207m▄\e[48;2;37;180;232m   \e[49;38;2;22;116;176m▀\e[49m    \e[38;2;36;36;36;49m▄\e[48;2;36;36;36m   \e[49m  \e[m   github.com/rockitthill
+ \e[49m   \e[49;38;2;36;36;36m▀\e[48;2;37;180;232m  \e[38;2;35;180;232;48;2;37;180;232m▄\e[49m    \e[38;2;36;36;36;49m▄\e[48;2;36;36;36m   \e[49;38;2;36;36;36m▀\e[49m   \e[m   
+";
+
 echo ""
-echo "🚀 Building for $TAG started."
+echo "$BULLET Building for $TAG started."
 echo ""
-echo "🚀 Creating buildx builder \"$BUILDER\"..."
-docker buildx create --use --name $BUILDER --platform $PLATFORMS
+echo "$BULLET Creating buildx builder \"$BUILDER\"..."
+# docker buildx create --use --name $BUILDER --platform $PLATFORMS
 echo ""
-echo "🚀 Building multi-platform images..."
-docker buildx build --push . --platform $PLATFORMS --tag $TAG
+echo "$BULLET Building multi-platform images..."
+# docker buildx build --push . --platform $PLATFORMS --tag $TAG
 echo ""
-echo "🚀 Done! Removing builder..."
-docker buildx rm $BUILDER
+echo "$BULLET Done! Removing builder..."
+# docker buildx rm $BUILDER
