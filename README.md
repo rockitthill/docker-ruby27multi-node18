@@ -4,5 +4,4 @@ Rails 6 + Ruby 2.7.8 w/ curl, git, nano, node 14, yarn 1.22.4, libmariadb, image
 
 ## Building, Tagging, and Pushing
 
-* `docker buildx create --use --name buildx-rails6 --platform linux/arm64,linux/amd64`
-* `docker buildx build --push . --platform linux/arm64,linux/amd64 --tag rockitthill/rails6`
+Use the `./build` script in this folder to build, tag, and push this image.
