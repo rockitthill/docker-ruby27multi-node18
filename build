@@ -25,10 +25,10 @@ echo ""
 echo "$BULLET Building for $TAG started."
 echo ""
 echo "$BULLET Creating buildx builder \"$BUILDER\"..."
-# docker buildx create --use --name $BUILDER --platform $PLATFORMS
+docker buildx create --use --name $BUILDER --platform $PLATFORMS
 echo ""
 echo "$BULLET Building multi-platform images..."
-# docker buildx build --push . --platform $PLATFORMS --tag $TAG
+docker buildx build --push . --platform $PLATFORMS --tag $TAG
 echo ""
 echo "$BULLET Done! Removing builder..."
-# docker buildx rm $BUILDER
+docker buildx rm $BUILDER
