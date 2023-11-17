@@ -1,6 +1,6 @@
 # Dockerfile for rockitthill/rails6
 
-Rails 6 + Ruby 2.7.8 w/ curl, git, nano, node 14, yarn 1.22.4, libmariadb, imagemagick, python2. Compatible with `linux/arm64` (M1, M2) and `linux/amd64` (Intel).
+Ruby 2.7.8 base image w/ essentials, curl, git, nano, python2, node 14, yarn 1.22.4, and npm 10.2.3. Compatible with `linux/arm64` (M1, M2) and `linux/amd64` (Intel).
 
 ## Building, Tagging, and Pushing
 
