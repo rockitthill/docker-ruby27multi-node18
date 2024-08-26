@@ -6,7 +6,7 @@ RUN apt-get update -qq \
     build-essential curl git nano python2 \
   && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
   && apt-get update && apt-get install nodejs -y \
-  && npm install -g yarn npm@10.7.0 \
+  && npm install -g yarn@1.22.22 npm@10.7.0 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
